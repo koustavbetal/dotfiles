@@ -146,6 +146,7 @@ alias sys='neofetch'
 # cpufetch ================================================|
 alias cpu='cpufetch'
 
+#tldr
 # gdu --> storage analyser
 # cmetrix
 # btop
