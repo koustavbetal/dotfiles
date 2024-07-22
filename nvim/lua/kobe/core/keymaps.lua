@@ -6,7 +6,7 @@ local keymap = vim.keymap -- for conciseness
 -- General Keymaps -------------------
 
 -- use jk to exit insert mode
-keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
+keymap.set("i", "oo", "<ESC>", { desc = "Exit insert mode with jk" })
 
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
@@ -31,11 +31,5 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tabx
 
--- --nvim comment
--- keymap.set("n", "<leader>//", "<GCC>", {desc = "Toggle Comment Current Line"})
--- keymap.set("n", "<leader>/.", "<gcb>", {desc = "Toggle Comment Block-wise"})
--- keymap.set("n", "<leader>/n", "<gc", {desc = "Toggle Comment n-Lines (j/k)"})
-
-
-
-
+-- save file
+keymap.set("n", "<leader>.", ":w<CR>", { desc = "Save all Files" })

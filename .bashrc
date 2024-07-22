@@ -132,6 +132,9 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+
+
 ###### startup cmd ######
 #=======================#
 
@@ -162,18 +165,12 @@ eval $(thefuck --alias f)
 
 # ranger
 # tmux
+
 # fzf ======================================================|
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 export FZF_CTRL_T_OPTS="--preview 'batcat -n --color=always --line-range :500 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always --icons=always {} | head -200'"
-
-
-# bat ======================================================|
-alias bat='batcat'
-
-# eza ======================================================|
-alias  ls='eza --color=always --icons=always  --long --git --no-time --no-user --no-permissions'
 
 # Advanced customization of fzf options via _fzf_comprun function
 # - The first argument to the function is the name of the command.
@@ -192,6 +189,13 @@ _fzf_comprun() {
 
 
 
+# bat ======================================================|
+alias bat='batcat'
+
+# eza ======================================================|
+alias  ls='eza --color=always --icons=always  --long --git --no-time --no-user --no-permissions'
+
+
 ###CUSTOM ALIASES ###
 #===================#
 
@@ -200,6 +204,8 @@ alias refresh='clear && source ~/.bashrc'
 alias boost='sudo nvidia-smi -pm 1'
 alias edit='sudo nano ~/.bashrc'
 alias file='nautilus .'
+alias jetpy='pycharm-community'
+
 alias src='source install/setup.bash'
 alias srcl='source install/local_setup.bash'
 alias cb='colcon build'
