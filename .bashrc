@@ -116,55 +116,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/kobe/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/kobe/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/kobe/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/kobe/miniconda3/bin:$PATH"
-    fi
-fi
-
-unset __conda_setup
-# <<< conda initialize <<<
-
-
-
-
-###### startup cmd ######
-#=======================#
-
-#<<<< colcon-autocomplete >>>>#
-source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
-#<<<< ROS Initialise >>>>#
-source /opt/ros/humble/setup.bash
-
-# neofetch ================================================|
-alias sys='neofetch'
-
-# cpufetch ================================================|
-alias cpu='cpufetch'
-
-#tldr
-# gdu --> storage analyser
-# cmetrix
-# btop
-# ffmpeg
-# ascii-image-generator ===================================|
-alias ascii='ascii-image-converter -C'
-
-# speedread
 
 # thefuck ==================================================|
 eval "$(thefuck --alias)"
 eval $(thefuck --alias f)
 
-# ranger
-# tmux
 
 # fzf ======================================================|
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -188,53 +144,62 @@ _fzf_comprun() {
 }
 
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/kobe/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/kobe/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/kobe/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/kobe/miniconda3/bin:$PATH"
+    fi
+fi
 
-# bat ======================================================|
-alias bat='batcat'
+unset __conda_setup
+# <<< conda initialize <<<
 
-# eza ======================================================|
-alias  ls='eza --color=always --icons=always  --long --git --no-time --no-user --no-permissions'
+#cargo (rust) init
+. "$HOME/.cargo/env"
+
+ # =-=-=--=-=-=-=-=-=-=-=-=-=-==-= ROS =-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-==-=-=-| 
 
 
-###CUSTOM ALIASES ###
-#===================#
+#<<<< ROS Initialise >>>>#
+alias rosinit='ros_env_setup'
 
-#<<<< apt fx >>>>#
-alias refresh='clear && source ~/.bashrc'
-alias boost='sudo nvidia-smi -pm 1'
-alias edit='sudo nano ~/.bashrc'
-alias file='nautilus .'
-alias jetpy='pycharm-community'
+ros_env_setup() {
+    if [ ! -f ~/.ros_sourced ]; then
+        echo "Sourcing ROS environment..."
+        source /opt/ros/humble/setup.bash
+        # Write the source command into the file
+        echo "source /opt/ros/humble/setup.bash" > ~/.ros_sourced
+    else
+        echo "ROS is already sourced globally!"
+        # Source the file contents
+        . ~/.ros_sourced
+    fi
+}
 
-alias src='source install/setup.bash'
-alias srcl='source install/local_setup.bash'
-alias cb='colcon build'
-alias cbs='colcon build --symlink-install'
-alias rosnl='ros2 node list'
-alias rostl='ros2 topic list'
-alias rqtg='rqt_graph'
+if [ -f ~/.ros_sourced ]; then
+    . ~/.ros_sourced
+fi
 
-#<<<< System Upgrade >>>>#
-alias sysupd='sudo apt update'
-alias sysupg='sudo apt upgrade'
-alias sysup='sudo apt update && sudo apt upgrade'
+#<<<< ROS Shutdown >>>>#
+alias rosdown="echo 'ROS 2 has been shut down softly !!' && rm -f ~/.ros_sourced"
 
-#<<<< apt install >>>>#
-alias sysinst='sudo apt install'
-alias sysrm='sudo apt remove'
+#<<<< colcon-autocomplete >>>>#
+source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 
-#<<<< snap remove >>>>#
-alias snapinst='sudo snap install'
-alias snaprm='sudo snap remove'
 
-#<<<< mkdir buff >>>>#
-alias mkdir='mkdir -pv'
+#==-=-=--=-==-=-=-=-=-=-=-=-=-= Additional features =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=|
+fcd(){
+	cd "$(find -type d | fzf --preview 'eza --tree --color=always --icons=always {} | head -200')"
+}
 
-#<<<< Navigate directory ++ >>>>#
-alias ..='cd ..'
-alias ...='cd ../..'
+open(){
+	xdg-open "$(find -type f | fzf --preview 'batcat -n --color=always --line-range :500 {}')"
+}
 
-#<<<< ROS2 >>>>#
-alias rosdepinst='echo "!!!!!! Use this cmd, ONLY when you are in the <_WS> folder !!!!!" && rosdep install -i --from-path src --rosdistro humble -y'
-alias rosdepinit='sudo rosdep init && rosdep update'
 
