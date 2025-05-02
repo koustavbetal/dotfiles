@@ -19,16 +19,21 @@ alias ascii='ascii-image-converter -C'
 alias bat='batcat'
 
 # eza ======================================================|
-alias  ls='eza --color=always --icons=always  --long --git --no-time --no-user --no-permissions'
-
+alias ls='eza --color=always --icons=always  --long --git --no-time --no-user --no-permissions'
+alias la='eza --color=always --icons=always -al --no-user --no-time'
+alias ll='eza --color=always --icons=always -alm --total-size'
+alias ld='eza --color=always --icons=always -lTD --level=3 --sort=modified --reverse'
+alias lx='eza --color=always --icons=always -alTM --level=3 --git --total-size'
 
 ###CUSTOM ALIASES ###
 #===================#
 
 #<<<< apt fx >>>>#
+alias cls='clear'
 alias refresh='clear && source ~/.bashrc'
 alias boost='sudo nvidia-smi -pm 1'
 alias edit='sudo nano ~/.bashrc'
+alias remap='sudo nano ~/.bash_aliases'
 alias file='nautilus .'
 alias jetpy='pycharm-community'
 

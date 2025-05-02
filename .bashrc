@@ -1,4 +1,5 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
+export TERM=xterm
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -56,6 +57,14 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+parse_git_branch() {
+    branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+    if [ -n "$branch" ]; then
+        echo " $branch"
+    fi
+}
+
+
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
@@ -67,6 +76,7 @@ unset color_prompt force_color_prompt
 case "$TERM" in
 xterm*|rxvt*)
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="\[\e[3;94m\] \w \[\e[1;36m\]\$(parse_git_branch)\n\[\e[1;33m\]  \[\e[1;36m\]\[\e[0m\] "
     ;;
 *)
     ;;
@@ -118,8 +128,8 @@ fi
 
 
 # thefuck ==================================================|
-eval "$(thefuck --alias)"
-eval $(thefuck --alias f)
+#eval "$(thefuck --alias)"
+#eval $(thefuck --alias f)
 
 
 # fzf ======================================================|
@@ -161,7 +171,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 #cargo (rust) init
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
 
  # =-=-=--=-=-=-=-=-=-=-=-=-=-==-= ROS =-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-==-=-=-| 
 
@@ -190,7 +200,7 @@ fi
 alias rosdown="echo 'ROS 2 has been shut down softly !!' && rm -f ~/.ros_sourced"
 
 #<<<< colcon-autocomplete >>>>#
-source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
+#source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 
 
 #==-=-=--=-==-=-=-=-=-=-=-=-=-= Additional features =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=|
@@ -202,4 +212,7 @@ open(){
 	xdg-open "$(find -type f | fzf --preview 'batcat -n --color=always --line-range :500 {}')"
 }
 
+eval "$(zoxide init bash)"
 
+bind 'set show-all-if-ambiguous on'
+bind 'TAB:menu-complete'
