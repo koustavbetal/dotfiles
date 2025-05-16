@@ -22,7 +22,16 @@ alias bat='batcat'
 alias ls='eza --color=always --icons=always  --long --git --no-time --no-user --no-permissions'
 alias la='eza --color=always --icons=always -al --no-user --no-time'
 alias ll='eza --color=always --icons=always -alm --total-size'
-alias ld='eza --color=always --icons=always -lTD --level=3 --sort=modified --reverse'
+
+alias ld='eza --color=always --icons=always -aTD --level=1 --sort=modified --reverse'
+alias lld='eza --color=always --icons=always -alTD --level=1 --sort=modified --reverse'
+
+alias ld2='eza --color=always --icons=always -aTD --level=2 --sort=modified --reverse'
+alias lld2='eza --color=always --icons=always -alTD --level=2 --sort=modified --reverse'
+
+alias ld3='eza --color=always --icons=always -aTD --level=3 --sort=modified --reverse'
+alias lld3='eza --color=always --icons=always -alTD --level=3 --sort=modified --reverse'
+
 alias lx='eza --color=always --icons=always -alTM --level=3 --git --total-size'
 
 ###CUSTOM ALIASES ###
@@ -64,8 +73,8 @@ alias mkdir='mkdir -pv'
 #<<<< Navigate directory ++ >>>>#
 alias ..='cd ..'
 alias ...='cd ../..'
-
+alias cd='z'
 #<<<< ROS2 >>>>#
-alias rosdepinst='echo "!!!!!! Use this cmd, ONLY when you are in the <_WS> folder !!!!!" && rosdep install -i --from-path src --rosdistro humble -y'
+alias rosdepinst='echo "!!!!!! Use this cmd, ONLY when you are in the <_WS> folder !!!!!" && rosdep install -i --from-path src --rosdistro $ROS_DISTRO -y'
 alias rosdepinit='sudo rosdep init && rosdep update'
 

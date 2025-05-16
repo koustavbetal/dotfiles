@@ -75,8 +75,8 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    PS1="\[\e[3;94m\] \w \[\e[1;36m\]\$(parse_git_branch)\n\[\e[1;33m\]  \[\e[1;36m\]\[\e[0m\] "
+    PS1="\n\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="\n\[\e[3;94m\] \w \[\e[1;36m\]\$(parse_git_branch)\n\[\e[1;33m\]  \[\e[1;36m\]\[\e[0m\] "
     ;;
 *)
     ;;
@@ -171,7 +171,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 #cargo (rust) init
-#. "$HOME/.cargo/env"
+. "$HOME/.cargo/env"
 
  # =-=-=--=-=-=-=-=-=-=-=-=-=-==-= ROS =-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-==-=-=-| 
 
@@ -182,9 +182,9 @@ alias rosinit='ros_env_setup'
 ros_env_setup() {
     if [ ! -f ~/.ros_sourced ]; then
         echo "Sourcing ROS environment..."
-        source /opt/ros/humble/setup.bash
+        source /opt/ros/jazzy/setup.bash
         # Write the source command into the file
-        echo "source /opt/ros/humble/setup.bash" > ~/.ros_sourced
+        echo "source /opt/ros/jazzy/setup.bash" > ~/.ros_sourced
     else
         echo "ROS is already sourced globally!"
         # Source the file contents
@@ -200,7 +200,7 @@ fi
 alias rosdown="echo 'ROS 2 has been shut down softly !!' && rm -f ~/.ros_sourced"
 
 #<<<< colcon-autocomplete >>>>#
-#source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
+source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 
 
 #==-=-=--=-==-=-=-=-=-=-=-=-=-= Additional features =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=|
@@ -216,3 +216,6 @@ eval "$(zoxide init bash)"
 
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
+#source /opt/ros/jazzy/setup.bash
+source /usr/share/colcon_cd/function/colcon_cd.sh
+export _colcon_cd_root=/opt/ros/jazzy/
