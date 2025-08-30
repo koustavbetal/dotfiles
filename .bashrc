@@ -219,3 +219,6 @@ bind 'TAB:menu-complete'
 #source /opt/ros/jazzy/setup.bash
 source /usr/share/colcon_cd/function/colcon_cd.sh
 export _colcon_cd_root=/opt/ros/jazzy/
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+export GZ_SIM_RESOURCE_PATH=~/workspace/codebase/rosBase/Gazebo_Models
+export PATH=$PATH:/usr/local/go/bin

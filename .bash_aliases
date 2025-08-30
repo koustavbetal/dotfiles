@@ -78,3 +78,10 @@ alias cd='z'
 alias rosdepinst='echo "!!!!!! Use this cmd, ONLY when you are in the <_WS> folder !!!!!" && rosdep install -i --from-path src --rosdistro $ROS_DISTRO -y'
 alias rosdepinit='sudo rosdep init && rosdep update'
 
+#<<<< urdf-viz >>>>#
+alias urdf='urdf-viz -s 0.3 --bg-color-b 0.1 --bg-color-g 0.1 --bg-color-r 0.1'
+
+
+alias colcon_cache='unset COLCON_PREFIX_PATH
+unset AMENT_PREFIX_PATH
+unset CMAKE_PREFIX_PATH'
