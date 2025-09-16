@@ -45,6 +45,7 @@ alias edit='sudo nano ~/.bashrc'
 alias remap='sudo nano ~/.bash_aliases'
 alias file='nautilus .'
 alias jetpy='pycharm-community'
+alias copy='xclip -selection clipboard'
 
 alias src='source install/setup.bash'
 alias srcl='source install/local_setup.bash'
