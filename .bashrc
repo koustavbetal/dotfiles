@@ -76,7 +76,7 @@ unset color_prompt force_color_prompt
 case "$TERM" in
 xterm*|rxvt*)
     PS1="\n\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    PS1="\n\[\e[3;94m\] \w \[\e[1;36m\]\$(parse_git_branch)\n\[\e[1;33m\]  \[\e[1;36m\]\[\e[0m\] "
+	PS1="\n\[\e[3;94m\] \w \[\e[1;36m\]\$(parse_git_branch)\n\[\e[1;93m\]  \[\e[1;96m\]\[\e[0m\] "
     ;;
 *)
     ;;
@@ -134,7 +134,7 @@ fi
 
 # fzf ======================================================|
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
+#[ -f ~/.fzf/shell/key-bindings.bash ] && source ~/.fzf/shell/key-bindings.bash
 export FZF_CTRL_T_OPTS="--preview 'batcat -n --color=always --line-range :500 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always --icons=always {} | head -200'"
 
@@ -216,9 +216,21 @@ eval "$(zoxide init bash)"
 
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
-#source /opt/ros/jazzy/setup.bash
-source /usr/share/colcon_cd/function/colcon_cd.sh
-export _colcon_cd_root=/opt/ros/jazzy/
-export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-export GZ_SIM_RESOURCE_PATH=~/workspace/codebase/rosBase/Gazebo_Models
-export PATH=$PATH:/usr/local/go/bin
+#source /usr/share/colcon_cd/function/colcon_cd.sh
+#export _colcon_cd_root=/opt/ros/jazzy/
+#export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+#export GZ_SIM_RESOURCE_PATH=~/workspace/codebase/rosBase/Gazebo_Models
+#export PATH=$PATH:/usr/local/go/bin
+
+eval "$(uv generate-shell-completion bash)"
+eval "$(uvx --generate-shell-completion bash)"
+
+# uv
+export PATH="/home/kobe/.local/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/kobe/.lmstudio/bin"
+# End of LM Studio CLI section
+
+export PATH=/home/kobe/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/kobe/miniconda3/condabin:/snap/ghostty/current/bin:/snap/ghostty/current/usr/bin:/home/kobe/.local/bin:/home/kobe/.cargo/bin:/home/kobe/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/kobe/.lmstudio/bin:/snap/ghostty/360/bin:/home/kobe/.fzf/bin:/home/kobe/.lmstudio/bin:/usr/local/go/bin:/usr/local/go/bin
+
