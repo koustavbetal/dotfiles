@@ -234,3 +234,4 @@ export PATH="$PATH:/home/kobe/.lmstudio/bin"
 
 export PATH=/home/kobe/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/kobe/miniconda3/condabin:/snap/ghostty/current/bin:/snap/ghostty/current/usr/bin:/home/kobe/.local/bin:/home/kobe/.cargo/bin:/home/kobe/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/kobe/.lmstudio/bin:/snap/ghostty/360/bin:/home/kobe/.fzf/bin:/home/kobe/.lmstudio/bin:/usr/local/go/bin:/usr/local/go/bin
 
+#export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
