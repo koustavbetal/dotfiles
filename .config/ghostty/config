@@ -11,6 +11,8 @@ gtk-titlebar = false
 window-width = 110
 window-height = 30
 
+mouse-scroll-multiplier = 10
+
 keybind = super+shift+t=new_window
 keybind = ctrl+shift+r=reload_config
 keybind = ctrl+shift+up=new_split:up
