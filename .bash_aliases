@@ -45,7 +45,7 @@ alias edit='sudo nvim ~/.bashrc'
 alias remap='sudo nvim ~/.bash_aliases'
 alias file='nautilus .'
 alias jetpy='pycharm-community'
-alias copy='xclip -selection clipboard'
+alias copy='xclip -selection clipboard' 
 
 alias src='source install/setup.bash'
 alias srcl='source install/local_setup.bash'
@@ -81,7 +81,6 @@ alias rosdepinit='sudo rosdep init && rosdep update'
 
 #<<<< urdf-viz >>>>#
 alias urdf='urdf-viz -s 0.3 --bg-color-b 0.1 --bg-color-g 0.1 --bg-color-r 0.1'
-
 
 alias colcon_cache='unset COLCON_PREFIX_PATH
 unset AMENT_PREFIX_PATH

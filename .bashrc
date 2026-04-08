@@ -238,3 +238,4 @@ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 export ROS_DOMAIN_ID=42
 
 export PATH=$PATH:/home/kobe/.spicetify
+ff() { "${@:1:$#-1}" | rg "${@: -1}"; }
