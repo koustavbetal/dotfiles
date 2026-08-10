@@ -2,6 +2,11 @@ app.zen_browser.zen
 com.discordapp.Discord
 com.freerdp.FreeRDP
 com.obsproject.Studio
-com.spotify.Client
+com.usebottles.bottles
+io.github.softfever.OrcaSlicer
+it.mijorus.gearlever
+net.nokyan.Resources
+org.inkscape.Inkscape
 org.kicad.KiCad
+org.localsend.localsend_app
 org.telegram.desktop

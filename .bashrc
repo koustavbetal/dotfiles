@@ -239,3 +239,9 @@ export ROS_DOMAIN_ID=42
 
 export PATH=$PATH:/home/kobe/.spicetify
 ff() { "${@:1:$#-1}" | rg "${@: -1}"; }
+
+# AI handler paths
+export LLAMA_CACHE=/models
+export HF_HOME=/models/huggingface
+# or, if you only want to redirect the model cache specifically:
+export HF_HUB_CACHE=/models/huggingface/hub
