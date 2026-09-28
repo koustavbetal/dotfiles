@@ -1,0 +1,15 @@
+{
+  "revision": "1",
+  "keys": {
+    "7d67bc4da18e01676a090929dcf296abfd340e3de960e73522385f830ccc24040d3e39d686530f2d0a94e8ee36f12af8cdf258cb501070d9e7536fe7": {
+      "size": 140
+    }
+  },
+  "lru": [
+    {
+      "key": "7d67bc4da18e01676a090929dcf296abfd340e3de960e73522385f830ccc24040d3e39d686530f2d0a94e8ee36f12af8cdf258cb501070d9e7536fe7",
+      "lastUsedAt": 1788070998636
+    }
+  ],
+  "size": 140
+}

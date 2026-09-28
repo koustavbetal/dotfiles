@@ -1,0 +1,15 @@
+{
+  "revision": "1",
+  "keys": {
+    "anna-s-archive-search-filter": {
+      "size": 5
+    }
+  },
+  "lru": [
+    {
+      "key": "anna-s-archive-search-filter",
+      "lastUsedAt": 1788000927475
+    }
+  ],
+  "size": 5
+}

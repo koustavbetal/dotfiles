@@ -1,0 +1,214 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "dad-jokes",
+  "title": "Dad Jokes",
+  "description": "Get a random dad joke",
+  "icon": "icon.png",
+  "author": "pernielsentikaer",
+  "contributors": [
+    "aljadan",
+    "xmok",
+    "0xdhrv"
+  ],
+  "categories": [
+    "Fun"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "index",
+      "title": "Random Dad Joke",
+      "description": "Get a random dad joke",
+      "mode": "view"
+    }
+  ],
+  "tools": [
+    {
+      "name": "get-random-joke",
+      "title": "Get Random Dad Joke",
+      "description": "Fetch a random dad joke to share with the user",
+      "instructions": "Fetch a random dad joke from icanhazdadjoke.com",
+      "confirmation": false
+    },
+    {
+      "name": "search-jokes",
+      "title": "Search Dad Jokes",
+      "description": "Search for dad jokes matching a topic or keyword",
+      "instructions": "Search for dad jokes matching a topic or keyword",
+      "input": {
+        "type": "object",
+        "properties": {
+          "term": {
+            "type": "string",
+            "description": "The topic or keyword to search for, e.g. \"cat\", \"programming\", or \"food\""
+          },
+          "limit": {
+            "type": "number",
+            "description": "Maximum number of jokes to return (default 3, max 10)"
+          }
+        },
+        "required": [
+          "term"
+        ]
+      },
+      "confirmation": false
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.104.24",
+    "@raycast/utils": "^2.3.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.2.0",
+    "@types/node": "^22.19.17",
+    "@types/react": "^19.0.10",
+    "eslint": "^10.8.1",
+    "prettier": "^3.9.6",
+    "react": "^19.2.8",
+    "typescript": "^5.8.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "ray publish"
+  },
+  "platforms": [
+    "macOS",
+    "Windows"
+  ],
+  "ai": {
+    "instructions": "Share dad jokes when the user wants humor or a laugh. Use search when they mention a topic; otherwise fetch a random joke.\n",
+    "evals": [
+      {
+        "input": "@dad-jokes tell me a joke",
+        "mocks": {
+          "get-random-joke": "Why don't scientists trust atoms? Because they make up everything!"
+        },
+        "expected": [
+          {
+            "callsTool": "get-random-joke"
+          },
+          {
+            "includes": "atoms"
+          }
+        ]
+      },
+      {
+        "input": "@dad-jokes I need a good laugh",
+        "mocks": {
+          "get-random-joke": "What do you call a fake noodle? An impasta!"
+        },
+        "expected": [
+          {
+            "callsTool": "get-random-joke"
+          }
+        ]
+      },
+      {
+        "input": "@dad-jokes hit me with a random dad joke",
+        "mocks": {
+          "get-random-joke": "I'm afraid for the calendar. Its days are numbered."
+        },
+        "expected": [
+          {
+            "callsTool": "get-random-joke"
+          },
+          {
+            "not": {
+              "callsTool": "search-jokes"
+            }
+          }
+        ]
+      },
+      {
+        "input": "@dad-jokes find a joke about computers",
+        "mocks": {
+          "search-jokes": [
+            "Why did the computer show up at work late? It had a hard drive."
+          ]
+        },
+        "expected": [
+          {
+            "callsTool": {
+              "name": "search-jokes",
+              "arguments": {
+                "term": {
+                  "includes": "computer"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "input": "@dad-jokes share a dad joke about cats",
+        "mocks": {
+          "search-jokes": [
+            "What do you call a pile of cats? A meowtain.",
+            "Why was the cat sitting on the computer? It wanted to keep an eye on the mouse."
+          ]
+        },
+        "expected": [
+          {
+            "callsTool": {
+              "name": "search-jokes",
+              "arguments": {
+                "term": {
+                  "includes": "cat"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "input": "@dad-jokes give me 3 jokes about food",
+        "mocks": {
+          "search-jokes": [
+            "Why did the cookie go to the hospital? Because he felt crummy.",
+            "What do you call cheese that isn't yours? Nacho cheese.",
+            "Why don't eggs tell jokes? They'd crack each other up."
+          ]
+        },
+        "expected": [
+          {
+            "callsTool": {
+              "name": "search-jokes",
+              "arguments": {
+                "term": {
+                  "includes": "food"
+                },
+                "limit": 3
+              }
+            }
+          }
+        ]
+      },
+      {
+        "input": "@dad-jokes any jokes about programming?",
+        "mocks": {
+          "search-jokes": [
+            "Why do programmers prefer dark mode? Because light attracts bugs."
+          ]
+        },
+        "expected": [
+          {
+            "callsTool": {
+              "name": "search-jokes",
+              "arguments": {
+                "term": {
+                  "includes": "program"
+                }
+              }
+            }
+          },
+          {
+            "includes": "bugs"
+          }
+        ]
+      }
+    ]
+  }
+}

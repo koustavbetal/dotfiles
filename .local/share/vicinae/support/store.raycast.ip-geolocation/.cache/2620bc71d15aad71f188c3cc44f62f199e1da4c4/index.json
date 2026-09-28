@@ -1,0 +1,29 @@
+{
+  "revision": "1",
+  "keys": {
+    "212cbb99e605ee8f5c61d4f9f709adfde45653ddundefined": {
+      "size": 9
+    },
+    "4628eebe613971eaa1fb7a5609570e0b22c69af5undefined": {
+      "size": 9
+    },
+    "d6647a1df2b3258a9e7b69320701246fef049dedundefined": {
+      "size": 261
+    }
+  },
+  "lru": [
+    {
+      "key": "d6647a1df2b3258a9e7b69320701246fef049dedundefined",
+      "lastUsedAt": 1787987750950
+    },
+    {
+      "key": "4628eebe613971eaa1fb7a5609570e0b22c69af5undefined",
+      "lastUsedAt": 1787987749012
+    },
+    {
+      "key": "212cbb99e605ee8f5c61d4f9f709adfde45653ddundefined",
+      "lastUsedAt": 1787987743722
+    }
+  ],
+  "size": 279
+}

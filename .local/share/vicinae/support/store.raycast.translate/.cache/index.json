@@ -1,0 +1,22 @@
+{
+  "revision": "1",
+  "keys": {
+    "selectedLanguageSet": {
+      "size": 33
+    },
+    "languages": {
+      "size": 47
+    }
+  },
+  "lru": [
+    {
+      "key": "selectedLanguageSet",
+      "lastUsedAt": 1788164995761
+    },
+    {
+      "key": "languages",
+      "lastUsedAt": 1788164932748
+    }
+  ],
+  "size": 80
+}

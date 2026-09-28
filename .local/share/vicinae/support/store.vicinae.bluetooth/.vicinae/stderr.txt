@@ -1,0 +1,38 @@
+Failed to perform connect on realme Buds T310: r [BlueZError]: br-connection-refused
+    at Q (/home/kobe/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:29:3950)
+    at Ge (/home/kobe/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:29:6594)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async zi (/home/kobe/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:30:365)
+    at async en (/home/kobe/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:36:650)
+    at async Ll (/home/kobe/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:36:3090)
+    at async /home/kobe/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:36:4429 {
+  dbusError: undefined,
+  cause: kr [DBusError]: br-connection-refused
+      at e.flags.mu._methodReturnHandlers.<computed> (/home/kobe/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:18:1584)
+      at t (/home/kobe/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:17:580)
+      at EventEmitter.<anonymous> (/home/kobe/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:17:1210)
+      at EventEmitter.emit (node:events:519:28)
+      at /home/kobe/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:29:2383
+      at Socket.<anonymous> (/home/kobe/.local/share/vicinae/extensions/store.vicinae.bluetooth/devices.js:18:25265)
+      at Socket.emit (node:events:519:28)
+      at emitReadable_ (node:internal/streams/readable:834:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:88:21) {
+    type: 'org.bluez.Error.Failed',
+    text: 'br-connection-refused',
+    reply: r {
+      type: 3,
+      _sent: false,
+      _serial: 342,
+      path: undefined,
+      interface: undefined,
+      member: undefined,
+      errorName: 'org.bluez.Error.Failed',
+      replySerial: 35,
+      destination: ':1.6936',
+      sender: ':1.4',
+      signature: 's',
+      body: [Array],
+      flags: 1
+    }
+  }
+}

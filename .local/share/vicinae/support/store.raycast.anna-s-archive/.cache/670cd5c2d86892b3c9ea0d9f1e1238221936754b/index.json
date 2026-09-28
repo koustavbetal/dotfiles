@@ -1,0 +1,29 @@
+{
+  "revision": "1",
+  "keys": {
+    "655ee706ee14ec8ae5bb5037fb5c91a548209f29undefined8fb29ac9856fa7801e7835d922632657413b0aeb8e33feee1e7b20894c26fe5d2b2ce31480d95676": {
+      "size": 4
+    },
+    "b7d698d69995ad46da4e0945979f2c7d298ef0a1undefined8fb29ac9856fa7801e7835d922632657413b0aeb8e33feee1e7b20894c26fe5d2b2ce31480d95676": {
+      "size": 4
+    },
+    "83d04d7499efcead8a7995fe4df6971dc8d2e0b4undefined8fb29ac9856fa7801e7835d922632657413b0aeb8e33feee1e7b20894c26fe5d2b2ce31480d95676": {
+      "size": 4
+    }
+  },
+  "lru": [
+    {
+      "key": "655ee706ee14ec8ae5bb5037fb5c91a548209f29undefined8fb29ac9856fa7801e7835d922632657413b0aeb8e33feee1e7b20894c26fe5d2b2ce31480d95676",
+      "lastUsedAt": 1788000908643
+    },
+    {
+      "key": "b7d698d69995ad46da4e0945979f2c7d298ef0a1undefined8fb29ac9856fa7801e7835d922632657413b0aeb8e33feee1e7b20894c26fe5d2b2ce31480d95676",
+      "lastUsedAt": 1788000908640
+    },
+    {
+      "key": "83d04d7499efcead8a7995fe4df6971dc8d2e0b4undefined8fb29ac9856fa7801e7835d922632657413b0aeb8e33feee1e7b20894c26fe5d2b2ce31480d95676",
+      "lastUsedAt": 1788000908640
+    }
+  ],
+  "size": 12
+}
