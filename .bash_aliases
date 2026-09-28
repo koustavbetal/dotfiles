@@ -45,7 +45,7 @@ alias edit='sudo nvim ~/.bashrc'
 alias remap='sudo nvim ~/.bash_aliases'
 alias file='nautilus .'
 alias jetpy='pycharm-community'
-alias copy='xclip -selection clipboard' 
+alias copy='wl-copy' 
 
 alias src='source install/setup.bash'
 alias srcl='source install/local_setup.bash'

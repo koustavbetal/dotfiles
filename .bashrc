@@ -232,10 +232,6 @@ export PATH="/home/kobe/.local/bin:$PATH"
 export PATH="$PATH:/home/kobe/.lmstudio/bin"
 # End of LM Studio CLI section
 
-export PATH=/home/kobe/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/kobe/miniconda3/condabin:/snap/ghostty/current/bin:/snap/ghostty/current/usr/bin:/home/kobe/.local/bin:/home/kobe/.cargo/bin:/home/kobe/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/kobe/.lmstudio/bin:/snap/ghostty/360/bin:/home/kobe/.fzf/bin:/home/kobe/.lmstudio/bin:/usr/local/go/bin:/usr/local/go/bin
-
-export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-export ROS_DOMAIN_ID=42
 
 export PATH=$PATH:/home/kobe/.spicetify
 ff() { "${@:1:$#-1}" | rg "${@: -1}"; }
@@ -245,3 +241,8 @@ export LLAMA_CACHE=/models
 export HF_HOME=/models/huggingface
 # or, if you only want to redirect the model cache specifically:
 export HF_HUB_CACHE=/models/huggingface/hub
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator

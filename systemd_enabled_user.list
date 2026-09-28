@@ -6,8 +6,8 @@ gnome-keyring-daemon.service
 gnome-keyring-daemon.socket
 gpg-agent-browser.socket
 gpg-agent-extra.socket
-gpg-agent.socket
 gpg-agent-ssh.socket
+gpg-agent.socket
 keyboxd.socket
 launchpadlib-cache-clean.timer
 obex.service
